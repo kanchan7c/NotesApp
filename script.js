@@ -1,5 +1,17 @@
 // getting references to add new notes on body 
 const newNote = document.querySelector('#addNote');
+// saving user notes to local storage 
+const updateLocalStorage = () => {
+    const textInput = document.querySelectorAll('textarea');
+    const notes = [];
+    
+    textInput.forEach((note) => {
+        return notes.push(note.value);
+    })
+
+    localStorage.setItem('notes', JSON.stringify(notes));
+}
+
 const addNewNote = (text = '') => {
   const note = document.createElement('div');
         note.classList.add('note');
@@ -38,13 +50,22 @@ const addNewNote = (text = '') => {
         Main.classList.toggle('d-none');
     })
 
+    // adding notes entered to main section 
     TextArea.addEventListener('change', (event) => {
         const userNote = event.target.value;
         Main.innerText = userNote;
+
+        updateLocalStorage();
     })
 
     document.body.appendChild(note);
 }
+
+// getting data from localStorage 
+
+const notes = JSON.parse(localStorage.getItem('notes'));
+
+if(notes){ notes.forEach((note) => addNewNote(note))};
 
 // Add another note button functionality 
 newNote.addEventListener('click', () => addNewNote());
