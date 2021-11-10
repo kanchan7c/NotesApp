@@ -1,0 +1,54 @@
+.addBtn:hover{
+    background-color: green;
+    color: whitesmoke;
+    transition: 0.5s;
+}
+
+.bi-pen {
+    top: 0;
+    left: 75%;
+    padding: 4px;
+    color: green;
+    transition: 0.5s;
+}
+
+.bi-trash {
+    top: 0;
+    left: 85%;
+    color: red;
+    padding: 4px;
+    transition: 0.5s;
+}
+
+.bi-pen:hover,
+.bi-trash:hover
+ {
+    cursor: pointer;
+    color: white;
+}
+
+.bi-pen:hover{
+    background-color: green;
+}
+
+.bi-trash:hover{
+    background-color: red;
+}
+
+.note{
+    width: 15rem;
+    height: 13rem;
+    border: transparent;
+    border-radius: 20px;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    overflow: scroll;
+    font-size: 0.7rem;
+}
+
+textarea:focus {
+    outline: none;
+}
