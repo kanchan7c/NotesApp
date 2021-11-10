@@ -3,9 +3,10 @@ const newNote = document.querySelector('#addNote');
 const addNewNote = (text = '') => {
   const note = document.createElement('div');
         note.classList.add('note');
-        note.classList.add('d-inline-block');
-        note.classList.add('mx-3');
-        note.classList.add('my-0');
+        // note.classList.add('mx-3');
+        // note.classList.add('my-2');
+        note.classList.add('d-inline-flex');
+        note.classList.add('flex-row');
 
     // inserting HTML data to be rendered dynamically 
     const htmlData = 

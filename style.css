@@ -39,7 +39,9 @@
     width: 15rem;
     height: 13rem;
     border: transparent;
-    border-radius: 20px;
+    border-radius: 5px;
+    margin: 6px;
+    overflow: auto;
 }
 
 textarea {
