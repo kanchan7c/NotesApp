@@ -10,12 +10,12 @@ const addNewNote = (text = '') => {
 
     // inserting HTML data to be rendered dynamically 
     const htmlData = 
-    `<div class=" bg-light border-0 ">
-    <button id="edit" class="edit border-0 bg-transparent"><i class="bi bi-pen rounded fs-6 fw-bolder "></i></button>
-    <button id="delete" class="delete border-0 bg-transparent"><i class="bi bi-trash fs-6 fw-bolder rounded"></i></button>
+    `<div class=" bg-light border-0">
+    <button id="edit" class="edit border-0 bg-transparent "><i class="bi bi-pen rounded fs-6 fw-bolder shadow"></i></button>
+    <button id="delete" class="delete border-0 bg-transparent "><i class="bi bi-trash fs-6 fw-bolder rounded shadow"></i></button>
     </div>
-    <div class="main"></div>
-    <textarea class="border-0" style="width: 15rem; min-height: 10rem; max-height: 15rem;"> </textarea> `;
+    <div class="main ${text ? "" : "d-none"}" style="width: 15rem; min-height: 10rem; max-height: 15rem;"></div>
+    <textarea class="border-0 ${text ? "d-none" : ""}" style="width: 15rem; min-height: 10rem; max-height: 15rem;"> </textarea> `;
     
     note.insertAdjacentHTML('afterbegin', htmlData);
 
@@ -25,10 +25,23 @@ const addNewNote = (text = '') => {
     const Main = note.querySelector('.main');
     const TextArea = note.querySelector('textarea');
 
-    //  delete button functionality 
+    //  delete note functionality 
     Delete.addEventListener('click', () => {
         note.remove();
     })  
+
+    // toggle using edit button 
+    TextArea.value = text;
+    Main.innerText = text;
+    Edit.addEventListener('click', () => {
+        TextArea.classList.toggle('d-none');
+        Main.classList.toggle('d-none');
+    })
+
+    TextArea.addEventListener('change', (event) => {
+        const userNote = event.target.value;
+        Main.innerText = userNote;
+    })
 
     document.body.appendChild(note);
 }

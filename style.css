@@ -4,20 +4,23 @@
     transition: 0.5s;
 }
 
+button {
+    margin: 0.5rem 0;
+}
 .bi-pen {
-    top: 0;
-    left: 75%;
-    padding: 4px;
-    color: green;
+    margin-bottom: 1rem;
+    padding: 5px;
+    color: white;;
     transition: 0.5s;
+    background-color: green;
 }
 
 .bi-trash {
-    top: 0;
-    left: 85%;
-    color: red;
-    padding: 4px;
+    margin-top: 1rem;
+    color: white;;
+    padding: 5px;
     transition: 0.5s;
+    background-color: red;
 }
 
 .bi-pen:hover,
@@ -25,14 +28,17 @@
  {
     cursor: pointer;
     color: white;
+    transition: 0.5s;
 }
 
 .bi-pen:hover{
-    background-color: green;
+    background-color: white;
+    color: green;
 }
 
 .bi-trash:hover{
-    background-color: red;
+    background-color: white;
+    color: red;
 }
 
 .note{
@@ -54,3 +60,10 @@ textarea {
 textarea:focus {
     outline: none;
 }
+
+.main {
+    background-color: white;
+    font-size: 0.7rem;
+    border: none;
+}
+
